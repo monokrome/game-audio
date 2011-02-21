@@ -8,10 +8,15 @@
 #ifndef SIMPLESAMPLECACHE_HPP
 #define	SIMPLESAMPLECACHE_HPP
 
+#include <string>
+#include <map>
 #include "samplecache.hpp"
 
 class SimpleSampleCache : public ISampleCache
 {
+protected:
+	map<string, string> cache_data;
+
 public:
 	SimpleSampleCache();
 	~SimpleSampleCache();
