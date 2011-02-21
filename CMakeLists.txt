@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 2.8)
+include("builders/cmake/RequireOutOfSource.cmake")
+
+project(GAMEAUDIO)
+
+SET(GAMEAUDIO_SOURCE_FILES 
+	src/audio.cxx
+)
+
+ADD_LIBRARY(gameaudio ${GAMEAUDIO_SOURCE_FILES})
+
+FIND_LIBRARY(OPENAL_LIBRARY openal REQUIRED)
+SET(GAMEAUDIO_LIBRARIES ${GAMEAUDIO_LIBRARIES} ${OPENAL_LIBRARY})
+TARGET_LINK_LIBRARIES(gameaudio ${GAMEAUDIO_LIBRARIES})
+
