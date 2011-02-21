@@ -19,6 +19,9 @@ typedef struct {
 
 class SimpleSampleCache : public ISampleCache
 {
+private:
+	virtual void prepare_data(map<string, cache_data_t*>::iterator iter);
+
 protected:
 	map<string, cache_data_t*> cache_data;
 
@@ -26,15 +29,12 @@ public:
 	SimpleSampleCache();
 	~SimpleSampleCache();
 
-	/**
-     * @param identifier The identifier of a specific peice of audio data.
-     * @param raw_data The data that should be appended to this
-     */
-	virtual void set_data(string identifier, cache_data_t* data);
 	virtual void update(string identifier, string raw_data);
 	virtual void clear(string identifier);
-
 	virtual string get_data(string identifier);
+
+	virtual void set_info(string identifier, sample_info_t* info);
+	virtual sample_info_t* get_info(string identifier);
 };
 
 #endif	/* SIMPLESAMPLECACHE_HPP */

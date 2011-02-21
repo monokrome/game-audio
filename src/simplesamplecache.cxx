@@ -10,19 +10,30 @@
 
 using namespace std;
 
-void SimpleSampleCache::set_data(string identifier, cache_data_t* data)
+void SimpleSampleCache::set_info(string identifier, sample_info_t* info)
 {
 	map<string, cache_data_t*>::iterator iter = cache_data.find(identifier);
 
 	if (iter != cache_data.end())
 	{
-			// Delete the cached data if it already exists
-		if (iter->second != NULL)
-			delete iter->second;
+		prepare_data(iter);
 
 			// Updated it with new data
-		iter->second = data;
+		iter->second->info = info;
 	}
+}
+
+sample_info_t* SimpleSampleCache::get_info(string identifier)
+{
+	map<string, cache_data_t*>::iterator iter = cache_data.find(identifier);
+
+	if (iter != cache_data.end())
+	{
+		if (iter->second != NULL && iter->second->info != NULL)
+			return iter->second->info;
+	}
+
+	return NULL;
 }
 
 void SimpleSampleCache::update(string identifier, string raw_data)
@@ -32,8 +43,9 @@ void SimpleSampleCache::update(string identifier, string raw_data)
 	if (iter != cache_data.end())
 	{
 			// Delete the cached data if it already exists
-		if (iter->second != NULL)
-			iter->second->data.append(raw_data);
+		prepare_data(iter);
+
+		iter->second->data.append(raw_data);
 	}
 }
 
@@ -66,4 +78,17 @@ SimpleSampleCache::SimpleSampleCache()
 
 SimpleSampleCache::~SimpleSampleCache()
 {
+}
+
+/***
+ * Receives an iterator and modifies it to be in working order.
+ */
+void prepare_data(map<string, cache_data_t*>::iterator iter)
+{			// Delete the cached data if it already exists
+	if (iter->second == NULL)
+	{
+		iter->second = new cache_data_t;
+		iter->second->data = string("");
+		iter->second->info = NULL;
+	}
 }
