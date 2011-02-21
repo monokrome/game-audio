@@ -1,0 +1,3 @@
+[submodule "examples/openal"]
+	path = examples/openal
+	url = git://limpidtech.com/game-audio-examples-openal
