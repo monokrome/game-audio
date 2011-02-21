@@ -4,8 +4,7 @@ include("builders/cmake/RequireOutOfSource.cmake")
 
 project(GAMEAUDIO)
 
-SET(GAMEAUDIO_SOURCE_FILES 
-	src/audio.cxx
+SET(GAMEAUDIO_SOURCE_FILES
 	src/audiosample.cxx
 	src/samplecache.cxx
 )
