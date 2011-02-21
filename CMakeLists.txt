@@ -10,8 +10,8 @@ SET(GAMEAUDIO_SOURCE_FILES
 )
 
 SET(GAMEAUDIO_HEADER_FILES
-	src/audiosample.cxx
-	src/samplecache.cxx
+	src/audiosample.hpp
+	src/samplecache.hpp
 )
 
 SOURCE_GROUP(Sources "${GAMEAUDIO_SOURCE_FILES}")
