@@ -10,6 +10,14 @@ SET(GAMEAUDIO_SOURCE_FILES
 	src/audiocache.cxx
 )
 
+SET(GAMEAUDIO_HEADER_FILES
+	src/audiosample.cxx
+	src/audiocache.cxx
+)
+
+SOURCE_GROUP(Sources "${GAMEAUDIO_SOURCE_FILES}")
+SOURCE_GROUP(Headers "${GAMEAUDIO_HEADER_FILES}")
+
 ADD_LIBRARY(gameaudio ${GAMEAUDIO_SOURCE_FILES})
 
 # Find required libraries, and then link them to our project
