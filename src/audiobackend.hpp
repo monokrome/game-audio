@@ -16,4 +16,3 @@ public:
 };
 
 #endif	/* AUDIOBACKEND_HPP */
-
