@@ -19,13 +19,14 @@ public:
 	ISampleCache();
 	~ISampleCache();
 
-	virtual void update(string identifier, string raw_data) = 0;
-	virtual void clear(string identifier) = 0;
-	virtual string get_data(string identifier) = 0;
+	virtual void clear(const string identifier) = 0;
+	virtual void flush();
 
-	virtual void set_info(string identifier, sample_info_t* info) = 0;
-	virtual sample_info_t* get_info(string identifier);
+	virtual void update(const string identifier, const string raw_data) = 0;
+	virtual string get_raw_data(const string identifier) = 0;
+
+	virtual void set_info(const string identifier, sample_info_t* info) = 0;
+	virtual sample_info_t* get_info(const string identifier);
 };
 
 #endif	/* AUDIOCACHE_HPP */
-

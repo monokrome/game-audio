@@ -20,7 +20,8 @@ typedef struct {
 class SimpleSampleCache : public ISampleCache
 {
 private:
-	virtual void prepare_data(map<string, cache_data_t*>::iterator iter);
+	void clean_data(map<string, cache_data_t*>::iterator iter);
+	void prepare_data(map<string, cache_data_t*>::iterator iter);
 
 protected:
 	map<string, cache_data_t*> cache_data;
@@ -29,12 +30,14 @@ public:
 	SimpleSampleCache();
 	~SimpleSampleCache();
 
-	virtual void update(string identifier, string raw_data);
-	virtual void clear(string identifier);
-	virtual string get_data(string identifier);
+	virtual void clear(const string identifier) = 0;
+	virtual void flush();
 
-	virtual void set_info(string identifier, sample_info_t* info);
-	virtual sample_info_t* get_info(string identifier);
+	virtual void update(const string identifier, const string raw_data) = 0;
+	virtual string get_raw_data(const string identifier) = 0;
+
+	virtual void set_info(const string identifier, sample_info_t* info) = 0;
+	virtual sample_info_t* get_info(const string identifier);
 };
 
 #endif	/* SIMPLESAMPLECACHE_HPP */
