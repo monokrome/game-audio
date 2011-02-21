@@ -7,12 +7,12 @@ project(GAMEAUDIO)
 SET(GAMEAUDIO_SOURCE_FILES 
 	src/audio.cxx
 	src/audiosample.cxx
-	src/audiocache.cxx
+	src/samplecache.cxx
 )
 
 SET(GAMEAUDIO_HEADER_FILES
 	src/audiosample.cxx
-	src/audiocache.cxx
+	src/samplecache.cxx
 )
 
 SOURCE_GROUP(Sources "${GAMEAUDIO_SOURCE_FILES}")
