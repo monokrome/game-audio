@@ -21,7 +21,7 @@ public:
 
 	virtual void update(string identifier, string raw_data) = 0;
 	virtual void clear(string identifier) = 0;
-	virtual string get(string identifier) = 0;
+	virtual string get_data(string identifier) = 0;
 };
 
 #endif	/* AUDIOCACHE_HPP */
