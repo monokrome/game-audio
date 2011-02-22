@@ -1,16 +1,11 @@
 #include "samplecache.hpp"
 
-ISampleCache::ISampleCache()
-{
-}
-
-ISampleCache::~ISampleCache()
-{
-}
-
 /**
- * Creates a new sample cache item with the given identifier, updates it with
- * the sample data from raw_data, and sets it up to match the given piece data.
+ * Creates (or recreates) a sample cache entry.
+ *
+ * Creates a new sample cache entry with the given identifier, updates it with
+ * the sample data from raw_data, and sets it up to match the given piece of
+ * data.
  *
  * @param identifier A string that is used to uniquely identify the audio data
  * @param info A sample_info_t* structure that describes this audio's format
@@ -25,4 +20,12 @@ void ISampleCache::create(const string identifier,
 
 	set_info(identifier, info);
 	update(identifier, raw_data);
+}
+
+ISampleCache::ISampleCache()
+{
+}
+
+ISampleCache::~ISampleCache()
+{
 }
