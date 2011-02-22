@@ -17,3 +17,5 @@ Makefile
 *.la
 *.a
 
+# Removed docs directory from repository
+docs
