@@ -30,7 +30,9 @@ public:
 	virtual string get_raw_data(const string identifier) = 0;
 
 	virtual void set_info(const string identifier, sample_info_t* info) = 0;
-	virtual sample_info_t* get_info(const string identifier);
+	virtual sample_info_t get_info(const string identifier);
+
+	inline void throw_bad_identifier(string identifier);
 };
 
 #endif	/* AUDIOCACHE_HPP */

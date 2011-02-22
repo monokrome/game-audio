@@ -1,3 +1,4 @@
+#include <stdexcept>
 #include "samplecache.hpp"
 
 /**
@@ -20,6 +21,16 @@ void ISampleCache::create(const string identifier,
 
 	set_info(identifier, info);
 	update(identifier, raw_data);
+}
+
+/**
+ * Raises an error due to a bad identifier being passed.
+ *
+ * @param identifier The identifier that wasn't found in our cache.
+ */
+inline void ISampleCache::throw_bad_identifier(string identifier)
+{
+	throw std::runtime_error("Identifier " + identifier + " not in cache.");
 }
 
 ISampleCache::ISampleCache()

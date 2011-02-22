@@ -55,7 +55,7 @@ void SimpleSampleCache::update(const string identifier, const string raw_data)
 			// Delete the cached data if it already exists
 		prepare_data(iter);
 
-		iter->second->data = raw_data;
+		iter->second->data = string(raw_data);
 	}
 }
 
@@ -90,7 +90,11 @@ void SimpleSampleCache::set_info(const string identifier, sample_info_t* info)
 		prepare_data(iter);
 
 			// Updated it with new data
-		iter->second->info = info;
+		iter->second->info = *info;
+	}
+	else
+	{
+		throw_bad_identifier(identifier);
 	}
 }
 
@@ -100,17 +104,14 @@ void SimpleSampleCache::set_info(const string identifier, sample_info_t* info)
  * @param identifier The identifier which is used to refer to this sample.
  * @return Pointer to the sample_info_t structure decribing this sample.
  */
-sample_info_t* SimpleSampleCache::get_info(const string identifier)
+sample_info_t SimpleSampleCache::get_info(const string identifier)
 {
 	map<string, cache_data_t*>::iterator iter = cache_data.find(identifier);
 
-	if (iter != cache_data.end())
-	{
-		if (iter->second != NULL && iter->second->info != NULL)
-			return iter->second->info;
-	}
+	if (iter != cache_data.end() && (iter->second != NULL))
+		return iter->second->info;
 
-	return NULL;
+	throw_bad_identifier(identifier);
 }
 
 /**
@@ -121,12 +122,7 @@ sample_info_t* SimpleSampleCache::get_info(const string identifier)
 void SimpleSampleCache::clean_data(map<string,cache_data_t*>::iterator iter)
 {
 	if (iter->second != NULL)
-	{
-		if (iter->second->info != NULL)
-			delete iter->second->info; // Delete our cached sample info.
-
 		delete iter->second; // Delete our cache_data_t structure
-	}
 }
 
 /**
@@ -141,7 +137,6 @@ void SimpleSampleCache::prepare_data(map<string, cache_data_t*>::iterator iter)
 		iter->second = new cache_data_t;
 
 		iter->second->data = string("");
-		iter->second->info = NULL;
 	}
 }
 

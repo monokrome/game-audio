@@ -14,7 +14,7 @@
 
 typedef struct {
 	string data; // The PCM data related to this specific audio cache
-	sample_info_t* info; // Contains information regarding how to use data
+	sample_info_t info; // Contains information regarding how to use data
 } cache_data_t;
 
 class SimpleSampleCache : public ISampleCache
@@ -37,7 +37,7 @@ public:
 	virtual string get_raw_data(const string identifier) = 0;
 
 	virtual void set_info(const string identifier, sample_info_t* info) = 0;
-	virtual sample_info_t* get_info(const string identifier);
+	virtual sample_info_t get_info(const string identifier);
 };
 
 #endif	/* SIMPLESAMPLECACHE_HPP */
