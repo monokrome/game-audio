@@ -44,7 +44,7 @@ void SimpleSampleCache::clear(const string identifier)
  * Updates the given stream identifier's cache with the provided raw_data.
  *
  * @param identifier A string which is used to identify a stream
- * @param raw_data A piece of raw PCM data which will is appended to the cache
+ * @param raw_data A piece of raw PCM data which will replace the old data.
  */
 void SimpleSampleCache::update(const string identifier, const string raw_data)
 {
@@ -55,7 +55,7 @@ void SimpleSampleCache::update(const string identifier, const string raw_data)
 			// Delete the cached data if it already exists
 		prepare_data(iter);
 
-		iter->second->data.append(raw_data);
+		iter->second->data = raw_data;
 	}
 }
 
