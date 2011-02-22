@@ -12,9 +12,9 @@ ISampleCache::~ISampleCache()
  * Creates a new sample cache item with the given identifier, updates it with
  * the sample data from raw_data, and sets it up to match the given piece data.
  *
- * @param identifier
- * @param raw_data
- * @param info
+ * @param identifier A string that is used to uniquely identify the audio data
+ * @param info A sample_info_t* structure that describes this audio's format
+ * @param raw_data The data that we want affiliated with the given identifier
  */
 void ISampleCache::create(const string identifier,
                           sample_info_t* info,
