@@ -19,6 +19,10 @@ public:
 	ISampleCache();
 	~ISampleCache();
 
+	virtual void create(const string identifier,
+	                    sample_info_t* info,
+	                    const string raw_data="");
+
 	virtual void clear(const string identifier) = 0;
 	virtual void flush();
 
