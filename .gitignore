@@ -19,3 +19,7 @@ Makefile
 
 # Removed docs directory from repository
 docs
+
+# Directory that should be used for out-of-source-builds
+build
+
