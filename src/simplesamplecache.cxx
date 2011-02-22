@@ -122,7 +122,9 @@ void SimpleSampleCache::clean_data(map<string,cache_data_t*>::iterator iter)
 {
 	if (iter->second != NULL)
 	{
-		delete iter->second->info; // Delete our cached sample info.
+		if (iter->second->info != NULL)
+			delete iter->second->info; // Delete our cached sample info.
+
 		delete iter->second; // Delete our cache_data_t structure
 	}
 }
