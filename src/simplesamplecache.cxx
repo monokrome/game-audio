@@ -9,6 +9,7 @@
 #include "simplesamplecache.hpp"
 
 using namespace std;
+using namespace gameaudio;
 
 /**
  * Completely flushes all data from the cache.

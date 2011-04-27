@@ -1,6 +1,8 @@
 #include <stdexcept>
 #include "samplecache.hpp"
 
+using namespace gameaudio;
+
 /**
  * Creates (or recreates) a sample cache entry.
  *

@@ -7,6 +7,8 @@
 
 #include "audiosample.hpp"
 
+using namespace gameaudio;
+
 IAudioSample::IAudioSample()
 {
 }
@@ -14,3 +16,4 @@ IAudioSample::IAudioSample()
 IAudioSample::~IAudioSample()
 {
 }
+

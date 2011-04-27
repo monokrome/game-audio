@@ -13,27 +13,32 @@
 
 using namespace std;
 
-class ISampleCache
+namespace gameaudio
 {
-public:
-	ISampleCache();
-	~ISampleCache();
 
-	virtual void create(const string identifier,
-	                    sample_info_t* info,
-	                    const string raw_data="");
+	class ISampleCache
+	{
+	public:
+		ISampleCache();
+		~ISampleCache();
 
-	virtual void clear(const string identifier) = 0;
-	virtual void flush();
+		virtual void create(const string identifier,
+		                    sample_info_t* info,
+		                    const string raw_data="");
 
-	virtual void update(const string identifier, const string raw_data) = 0;
-	virtual string get_raw_data(const string identifier) = 0;
+		virtual void clear(const string identifier) = 0;
+		virtual void flush();
 
-	virtual void set_info(const string identifier, sample_info_t* info) = 0;
-	virtual sample_info_t get_info(const string identifier);
+		virtual void update(const string identifier, const string raw_data) = 0;
+		virtual string get_raw_data(const string identifier) = 0;
 
-	void throw_bad_identifier(string identifier);
-};
+		virtual void set_info(const string identifier, sample_info_t* info) = 0;
+		virtual sample_info_t get_info(const string identifier);
+
+		void throw_bad_identifier(string identifier);
+	};
+
+}
 
 #endif
 
