@@ -32,7 +32,7 @@ public:
 	virtual void set_info(const string identifier, sample_info_t* info) = 0;
 	virtual sample_info_t get_info(const string identifier);
 
-	inline void throw_bad_identifier(string identifier);
+	void throw_bad_identifier(string identifier);
 };
 
 #endif
