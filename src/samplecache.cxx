@@ -28,7 +28,7 @@ void ISampleCache::create(const string identifier,
  *
  * @param identifier The identifier that wasn't found in our cache.
  */
-inline void ISampleCache::throw_bad_identifier(string identifier)
+void ISampleCache::throw_bad_identifier(string identifier)
 {
 	throw std::runtime_error("Identifier " + identifier + " not in cache.");
 }
