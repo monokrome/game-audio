@@ -40,4 +40,5 @@ public:
 	virtual sample_info_t get_info(const string identifier);
 };
 
-#endif	/* SIMPLESAMPLECACHE_HPP */
+#endif
+

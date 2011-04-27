@@ -35,4 +35,5 @@ public:
 	inline void throw_bad_identifier(string identifier);
 };
 
-#endif	/* AUDIOCACHE_HPP */
+#endif
+

@@ -25,4 +25,5 @@ public:
 	~IAudioSample();
 };
 
-#endif	/* AUDIOSAMPLE_HPP */
+#endif
+
