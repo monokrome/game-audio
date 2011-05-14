@@ -6,6 +6,9 @@ project(GAMEAUDIO)
 
 SET(ROOT_DIR "${CMAKE_SOURCE_DIR}/../../")
 
+SET(EXECUTABLE_OUTPUT_PATH "${ROOT_DIR}/bin")
+SET(LIBRARY_OUTPUT_PATH "${ROOT_DIR}/lib")
+
 SET(GAMEAUDIO_SOURCE_FILES
 	"${ROOT_DIR}/src/audiosample.cxx"
 	"${ROOT_DIR}/src/samplecache.cxx"
