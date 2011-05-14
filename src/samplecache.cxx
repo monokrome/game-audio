@@ -1,3 +1,10 @@
+/* 
+ * File:   samplecache.cxx
+ * Author: Brandon "monokrome" Stoner
+ *
+ * Created on February 21, 2011, 3:52 AM
+ */
+
 #include <stdexcept>
 #include "samplecache.hpp"
 
