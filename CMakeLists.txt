@@ -19,10 +19,11 @@ SET(GAMEAUDIO_HEADER_FILES
 SOURCE_GROUP(Sources "${GAMEAUDIO_SOURCE_FILES}")
 SOURCE_GROUP(Headers "${GAMEAUDIO_HEADER_FILES}")
 
-ADD_LIBRARY(gameaudio ${GAMEAUDIO_SOURCE_FILES})
+# Attempt to find OpenAL on this machine
+FIND_PACKAGE(OpenAL)
 
-# Find required libraries, and then link them to our project
-FIND_LIBRARY(OPENAL_LIBRARY NAMES openal PATHS "${GAMEAUDIO_SOURCE_DIR}/public/lib" OpenAL32 REQUIRED)
+# This creates the library that will be generated for linking to GameAudio
+ADD_LIBRARY(gameaudio ${GAMEAUDIO_SOURCE_FILES})
 
 SET(GAMEAUDIO_LIBRARIES ${GAMEAUDIO_LIBRARIES} ${OPENAL_LIBRARY})
 TARGET_LINK_LIBRARIES(gameaudio ${GAMEAUDIO_LIBRARIES})
