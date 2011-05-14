@@ -16,6 +16,9 @@ SET(GAMEAUDIO_HEADER_FILES
 	src/simplesamplecache.hpp
 )
 
+# A bit of extra configuration for Visual Studio
+SET (MSPROJECT_TEMPLATE_DIRECTORY "${CMAKE_SOURCE_DIR}/CMake/Visual Studio")
+
 # Attempt to find OpenAL on this machine
 FIND_PACKAGE(OpenAL)
 
