@@ -16,4 +16,3 @@ IAudioSample::IAudioSample()
 IAudioSample::~IAudioSample()
 {
 }
-
