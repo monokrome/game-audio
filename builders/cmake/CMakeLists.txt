@@ -11,14 +11,10 @@ SET(LIBRARY_OUTPUT_PATH "${ROOT_DIR}/lib")
 
 SET(GAMEAUDIO_SOURCE_FILES
 	"${ROOT_DIR}/src/audiosample.cxx"
-	"${ROOT_DIR}/src/samplecache.cxx"
-	"${ROOT_DIR}/src/simplesamplecache.cxx"
 )
 
 SET(GAMEAUDIO_HEADER_FILES
 	"${ROOT_DIR}/src/audiosample.hpp"
-	"${ROOT_DIR}/src/samplecache.hpp"
-	"${ROOT_DIR}/src/simplesamplecache.hpp"
 )
 
 # A bit of extra configuration for Visual Studio
