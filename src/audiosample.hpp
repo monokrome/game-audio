@@ -1,10 +1,3 @@
-/* 
- * File:   audiosample.hpp
- * Author: Brandon "monokrome" Stoner <monokrome@monokro.me>
- *
- * Created on February 21, 2011, 3:40 AM
- */
-
 #ifndef AUDIOSAMPLE_HPP
 #define	AUDIOSAMPLE_HPP
 
@@ -26,6 +19,9 @@ namespace GameAudio
 	public:
 		IAudioSample();
 		~IAudioSample();
+
+	protected:
+		sample_info_t info;
 	};
 
 }
