@@ -12,7 +12,7 @@
 
 using namespace std;
 
-namespace gameaudio
+namespace GameAudio
 {
 
 	typedef struct {

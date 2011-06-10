@@ -7,7 +7,7 @@
 
 #include "audiosample.hpp"
 
-using namespace gameaudio;
+using namespace GameAudio;
 
 IAudioSample::IAudioSample()
 {
