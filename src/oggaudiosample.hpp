@@ -1,12 +1,14 @@
 #ifndef OGGAUDISAMPLE_HPP
 #define OGGAUDISAMPLE_HPP
 
+#include <string>
+
 #include "audiosample.hpp"
 
 namespace GameAudio
 {
 
-	class OggAudiOSample : public IAudioSample
+	class OggAudioSample : public IAudioSample
 	{
 	}
 
