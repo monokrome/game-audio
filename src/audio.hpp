@@ -15,8 +15,17 @@ namespace GameAudio
 		void Initialize();
 		void ShutDown();
 
+		bool IsInitialized();
+		bool EffectsAvailable();
+
 	private:
-		ALuint context;
+		bool isInitialized;
+		bool effectsAvailable;
+
+		ALCcontext *context;
+		ALCdevice *playbackDevice;
+
+		ALCint auxilarySendCount;
 	};
 
 }

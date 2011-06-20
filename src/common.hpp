@@ -4,6 +4,10 @@
  */
 #ifndef WIN32
 	#include <AL/al.h>
+	#include <AL/alc.h>
+	#include <AL/efx.h>
 #else
 	#include <al.h>
+	#include <alc.h>
+	#include <efx.h>
 #endif
