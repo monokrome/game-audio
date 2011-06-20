@@ -3,6 +3,8 @@
 
 #include <string>
 
+#include "common.hpp"
+
 using namespace std;
 
 namespace GameAudio
