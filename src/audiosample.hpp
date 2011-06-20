@@ -22,6 +22,9 @@ namespace GameAudio
 		IAudioSample(bool streaming = false);
 		~IAudioSample();
 
+		virtual void Open(std::string filename) = 0;
+		virtual void Close() = 0;
+
 		bool IsStreaming();
 
 	protected:
