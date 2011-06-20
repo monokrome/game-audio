@@ -13,6 +13,7 @@ SET(GAMEAUDIO_SOURCE_FILES
 	"${ROOT_DIR}/src/audio.cxx"
 	"${ROOT_DIR}/src/audiosample.cxx"
 	"${ROOT_DIR}/src/audiosource.cxx"
+	"${ROOT_DIR}/src/oggaudiosample.cxx"
 )
 
 SET(GAMEAUDIO_HEADER_FILES
@@ -20,6 +21,7 @@ SET(GAMEAUDIO_HEADER_FILES
 	"${ROOT_DIR}/src/audio.hpp"
 	"${ROOT_DIR}/src/audiosample.hpp"
 	"${ROOT_DIR}/src/audiosource.hpp"
+	"${ROOT_DIR}/src/oggaudiosample.hpp"
 )
 
 # A bit of extra configuration for Visual Studio
