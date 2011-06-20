@@ -47,6 +47,24 @@ void OggAudioSample::Close()
 }
 
 /**
+ * Returns a void pointer this sample's entire PCM data.
+ */
+void* OggAudioSample::GetData()
+{
+	char buffer_data[readBufferSize];
+	int *bitstream = NULL;
+	std::string result;
+
+	// TODO: Add support for 8-bit samples.
+	while (ov_read(&oggData, buffer_data, readBufferSize, 0, 2, 1, bitstream) > 0)
+	{
+		result += buffer_data;
+	}
+
+	return const_cast<char *>(result.c_str());
+}
+
+/**
  * Callback functions used by Ogg file open, read, seek, and close operations.
  */
 int vorbis_close_func(void *datasource)

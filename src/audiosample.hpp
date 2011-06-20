@@ -8,6 +8,10 @@
 
 using namespace std;
 
+const int streamingBufferCount = 4;
+const int streamingBufferSize = 65536;
+const int readBufferSize = 4096;
+
 namespace GameAudio
 {
 
@@ -27,9 +31,11 @@ namespace GameAudio
 		void ShutDown();
 
 		bool IsInitialized();
+		ALenum GetFormat();
 
 		virtual void Open(std::string filename) = 0;
 		virtual void Close() = 0;
+		virtual void* GetData();
 
 		bool IsStreaming();
 
@@ -38,6 +44,8 @@ namespace GameAudio
 		std::map<std::string, std::string> metadata;
 
 	private:
+		ALuint buffer[streamingBufferCount];
+
 		bool isStreaming;
 		bool isInitialized;
 	};

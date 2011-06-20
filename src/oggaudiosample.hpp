@@ -13,8 +13,10 @@ namespace GameAudio
 	class OggAudioSample : public IAudioSample
 	{
 	public:
-		void Open(std::string filename);
-		void Close();
+		virtual void Open(std::string filename);
+		virtual void Close();
+
+		virtual void *GetData();
 
 	private:
 		OggVorbis_File oggData;
