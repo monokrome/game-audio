@@ -18,6 +18,8 @@ namespace GameAudio
 		bool IsInitialized();
 		bool EffectsAvailable();
 
+		void MakeCurrent();
+
 	private:
 		bool isInitialized;
 		bool effectsAvailable;

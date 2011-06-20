@@ -40,13 +40,6 @@ void Audio::Initialize()
 		throw std::runtime_error("Couldn't create playback device context.");
 	}
 
-	alcMakeContextCurrent(context);
-
-	if (alGetError() != AL_NO_ERROR)
-	{
-		throw std::runtime_error("Unabled to make audio context current.");
-	}
-
 	if (effectsAvailable)
 	{
 		alcGetIntegerv(playbackDevice, ALC_MAX_AUXILIARY_SENDS,
@@ -84,11 +77,29 @@ void Audio::ShutDown()
 	isInitialized = false;
 }
 
+void Audio::MakeCurrent()
+{
+	alcMakeContextCurrent(context);
+
+	if (alGetError() != AL_NO_ERROR)
+	{
+		throw std::runtime_error("Unabled to make audio context current.");
+	}
+}
+
+/**
+ * Functions which expose the state of our audio system to developers.
+ */
 bool Audio::EffectsAvailable()
 {
 	return alcIsExtensionPresent(playbackDevice, "ALC_EXT_EFX");
 }
 
+/**
+ * Functions which modify the speed of sound and number of units per meter, so
+ * that developers are able to adjust the movement of audio to better fit
+ * their game world.
+ */
 void SetSpeedOfSound(const float newSpeedOfSound)
 {
 	alSpeedOfSound(newSpeedOfSound);
