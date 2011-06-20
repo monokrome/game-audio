@@ -26,6 +26,8 @@ namespace GameAudio
 		void Initialize();
 		void ShutDown();
 
+		bool IsInitialized();
+
 		virtual void Open(std::string filename) = 0;
 		virtual void Close() = 0;
 
@@ -37,6 +39,7 @@ namespace GameAudio
 
 	private:
 		bool isStreaming;
+		bool isInitialized;
 	};
 
 }
