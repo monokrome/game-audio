@@ -69,9 +69,7 @@ void* OggAudioSample::GetData()
  */
 int vorbis_close_func(void *datasource)
 {
-	fclose((FILE*) datasource);
-
-	return 0; // Why did Xiph make this return int? :(
+	return fclose((FILE*) datasource);
 }
 
 size_t vorbis_read_func(void *ptr, size_t size, size_t nmemb, void *datasource)
