@@ -44,12 +44,14 @@ find_path(Vorbis_INCLUDE_DIR vorbis/vorbisenc.h
   /opt/local/include
   /usr/local/include
   /usr/include
+  $ENV{XIPH_HOME}/include
 )
 
 set(Vorbis_NAMES vorbis)
 find_library(Vorbis_LIBRARY
   NAMES ${Vorbis_NAMES}
   PATHS /usr/lib /usr/local/lib /opt/local/lib
+  $ENV{XIPH_HOME}/lib/${CMAKE_BUILD_TYPE} $ENV{XIPH_HOME}/lib
 )
 
 if (Vorbis_INCLUDE_DIR AND Vorbis_LIBRARY)

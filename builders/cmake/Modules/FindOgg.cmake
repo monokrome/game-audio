@@ -44,12 +44,14 @@ find_path(Ogg_INCLUDE_DIR ogg/ogg.h
   /opt/local/include
   /usr/local/include
   /usr/include
+  $ENV{XIPH_HOME}/include
 )
 
 set(Ogg_NAMES ogg)
 find_library(Ogg_LIBRARY
   NAMES ${Ogg_NAMES}
   PATHS /usr/lib /usr/local/lib /opt/local/lib
+  $ENV{XIPH_HOME}/lib/${CMAKE_BUILD_TYPE} $ENV{XIPH_HOME}/lib
 )
 
 if (Ogg_INCLUDE_DIR AND Ogg_LIBRARY)
