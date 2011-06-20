@@ -10,12 +10,14 @@ SET(EXECUTABLE_OUTPUT_PATH "${ROOT_DIR}/bin")
 SET(LIBRARY_OUTPUT_PATH "${ROOT_DIR}/lib")
 
 SET(GAMEAUDIO_SOURCE_FILES
+	"${ROOT_DIR}/src/audio.cxx"
 	"${ROOT_DIR}/src/audiosample.cxx"
 	"${ROOT_DIR}/src/audiosource.cxx"
 )
 
 SET(GAMEAUDIO_HEADER_FILES
 	"${ROOT_DIR}/src/common.hpp"
+	"${ROOT_DIR}/src/audio.hpp"
 	"${ROOT_DIR}/src/audiosample.hpp"
 	"${ROOT_DIR}/src/audiosource.hpp"
 )
