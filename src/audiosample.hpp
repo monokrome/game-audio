@@ -2,6 +2,7 @@
 #define	AUDIOSAMPLE_HPP
 
 #include <string>
+#include <map>
 
 #include "common.hpp"
 
@@ -29,6 +30,7 @@ namespace GameAudio
 
 	protected:
 		sample_info_t info;
+		std::map<std::string, std::string> metadata;
 
 	private:
 		bool isStreaming;
