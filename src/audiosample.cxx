@@ -24,7 +24,7 @@ void IAudioSample::Initialize()
 
 		if (error != AL_NO_ERROR)
 		{
-			throw new std::runtime_error("Couldn't generate audio streaming buffers.");
+			throw new std::runtime_error("Couldn't generate streaming buffers.");
 		}
 	}
 	else
