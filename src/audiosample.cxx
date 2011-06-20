@@ -10,6 +10,14 @@ IAudioSample::~IAudioSample()
 {
 }
 
+void IAudioSample::Initialize()
+{
+}
+
+void IAudioSample::ShutDown()
+{
+}
+
 bool IAudioSample::IsStreaming()
 {
 	return isStreaming;

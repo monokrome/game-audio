@@ -23,6 +23,9 @@ namespace GameAudio
 		IAudioSample(bool streaming = false);
 		~IAudioSample();
 
+		void Initialize();
+		void ShutDown();
+
 		virtual void Open(std::string filename) = 0;
 		virtual void Close() = 0;
 
