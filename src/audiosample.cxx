@@ -2,10 +2,15 @@
 
 using namespace GameAudio;
 
-IAudioSample::IAudioSample()
+IAudioSample::IAudioSample(bool streaming)
 {
 }
 
 IAudioSample::~IAudioSample()
 {
+}
+
+bool IAudioSample::IsStreaming()
+{
+	return isStreaming;
 }

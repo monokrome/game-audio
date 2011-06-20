@@ -19,11 +19,16 @@ namespace GameAudio
 	class IAudioSample
 	{
 	public:
-		IAudioSample();
+		IAudioSample(bool streaming = false);
 		~IAudioSample();
+
+		bool IsStreaming();
 
 	protected:
 		sample_info_t info;
+
+	private:
+		bool isStreaming;
 	};
 
 }
