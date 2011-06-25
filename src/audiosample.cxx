@@ -1,4 +1,6 @@
+#include <stdexcept>
 #include "audiosample.hpp"
+#include <string.h>
 
 using namespace GameAudio;
 
