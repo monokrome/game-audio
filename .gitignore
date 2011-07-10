@@ -27,6 +27,9 @@ docs
 # Directory that should be used for out-of-source-builds
 build
 
+# IDe-specific files
+*.tmproj
+
 # Hidden files that aren't of git relation
 .*
 !.gitignore
