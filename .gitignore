@@ -27,3 +27,8 @@ docs
 # Directory that should be used for out-of-source-builds
 build
 
+# Hidden files that aren't of git relation
+.*
+!.gitignore
+!.gitmodules
+
